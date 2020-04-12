@@ -1,0 +1,20 @@
+{
+  "name": "devduude-twitch-bot-reincarnation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devduude/devduude-twitch-bot-reincarnation.git"
+  },
+  "keywords": [],
+  "author": "devduude",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devduude/devduude-twitch-bot-reincarnation/issues"
+  },
+  "homepage": "https://github.com/devduude/devduude-twitch-bot-reincarnation#readme"
+}
