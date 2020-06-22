@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node startup",
+    "lint": "eslint . --ext .js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,31 @@
   "bugs": {
     "url": "https://github.com/devduude/devduude-twitch-bot-reincarnation/issues"
   },
-  "homepage": "https://github.com/devduude/devduude-twitch-bot-reincarnation#readme"
+  "homepage": "https://github.com/devduude/devduude-twitch-bot-reincarnation#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "./commitlint.config.js"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.21.2",
+    "husky": "^4.2.5"
+  }
 }
