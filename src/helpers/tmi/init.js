@@ -1,6 +1,7 @@
 import tmi from 'tmi.js';
 import config from 'config';
 
+
 /**
  * Twitch Messaging Interface
  */
@@ -12,7 +13,7 @@ const client = new tmi.Client({
   },
   identity: {
     username: 'bashduude',
-    password: config.get('tmi.password'),
+    password: process.env.TWITCH_PASS || config.get('tmi.password'),
   },
   channels: [ 'bashduude' ],
 });
