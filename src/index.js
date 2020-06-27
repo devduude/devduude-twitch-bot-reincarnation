@@ -1,17 +1,17 @@
 import { TMI } from './helpers';
 
 
-function name (params) {
-  TMI.connect();
-  TMI.on('message', (channel, tags, message, self) => {
-    if (self) {
-      return;
-    }
-    if (message.toLowerCase() === '!hello') {
-      TMI.say(channel, `@${tags.username}, heya!`);
-    }
-  });
+async function app (params) {
+  try {
+    await TMI.client.connect();
+    await TMI.initializeEvents(TMI.client);
+
+  } catch (error) {
+    console.log(error);
+
+    TMI.client.disconnect();
+  }
 }
 
 
-export default name;
+export default app;
