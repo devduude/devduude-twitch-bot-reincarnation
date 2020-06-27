@@ -52,7 +52,7 @@ module.exports = {
     'space-before-function-paren': [ 'error', 'always' ],
     'arrow-body-style': [ 'error', 'as-needed' ],
     'array-bracket-spacing': [ 'error', 'always', { arraysInArrays: false, objectsInArrays: false }],
-    curly: [ 'error', 'all' ],
+    // curly: [ 'error', 'all' ],
     'no-multiple-empty-lines': [ 'error', { max: 2, maxBOF: 1 }],
     'object-curly-newline': [ 'error', { multiline: true }],
     'newline-per-chained-call': [ 'error', { ignoreChainWithDepth: 2 }],

@@ -1,7 +1,9 @@
 import tmi from 'tmi.js';
 import config from 'config';
 
-
+/**
+ * Twitch Messaging Interface
+ */
 const client = new tmi.Client({
   options: { debug: true },
   connection: {
@@ -14,16 +16,6 @@ const client = new tmi.Client({
   },
   channels: [ 'bashduude' ],
 });
-
-// client.connect();
-// client.on('message', (channel, tags, message, self) => {
-//   if (self) {
-//     return;
-//   }
-//   if (message.toLowerCase() === '!hello') {
-//     client.say(channel, `@${tags.username}, heya!`);
-//   }
-// });
 
 
 export default client;
