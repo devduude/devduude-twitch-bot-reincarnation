@@ -24,6 +24,7 @@
   "homepage": "https://github.com/devduude/devduude-twitch-bot-reincarnation#readme",
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
