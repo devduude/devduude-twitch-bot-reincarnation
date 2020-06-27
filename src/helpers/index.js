@@ -1,1 +1,3 @@
-export { default as TMI } from './TMI.js';
+import * as TMI from './tmi';
+
+export { TMI };
