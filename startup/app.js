@@ -1,1 +1,3 @@
-import dicks from '../src/tmiInit.js';
+import app from '../src';
+
+app();
