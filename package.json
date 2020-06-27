@@ -14,6 +14,10 @@
   "keywords": [],
   "author": "devduude",
   "license": "ISC",
+  "engines": {
+    "node": "13.8.0",
+    "npm": "6.13.6"
+  },
   "bugs": {
     "url": "https://github.com/devduude/devduude-twitch-bot-reincarnation/issues"
   },
