@@ -1,6 +1,6 @@
 function handleTime (tags) {
-  const time = new Date().toLocaleTimeString();
-  const response = `@${tags.username}, ${time} FeelsOkayMan `;
+  const time = new Date().toLocaleTimeString('ru-RU', { timeZone: 'Europe/Moscow' });
+  const response = `@${tags.username}, в Москве ${time} FeelsOkayMan `;
 
   return response;
 }
