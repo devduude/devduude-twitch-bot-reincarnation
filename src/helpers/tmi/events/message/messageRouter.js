@@ -1,17 +1,15 @@
-import { handlePepe } from './messages';
+import {
+  handlePepe,
+  handleTime,
+} from './messages';
 
 
 function messageRouter ({ tags, message }) {
-  /**
-   * FIXME: Look closer at this, as this may have to be refactored
-   */
-  switch (message) {
-    case message.includes('FeelsOkayMan'):
-      return handlePepe({ tags, message });
+  const isPepeTriggered = message.toLowerCase().includes('feelsokayman');
+  if (isPepeTriggered) return handlePepe({ tags, message });
 
-    default:
-      break;
-  }
+  const isHandleTimeTriggered = /сколько время/.test(message.toLowerCase());
+  if (isHandleTimeTriggered) return handleTime({ tags, message });
 }
 
 
