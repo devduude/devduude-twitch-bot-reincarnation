@@ -1,20 +1,13 @@
-import {
-  handleHello,
-  handleBye,
-  handlePepe,
-} from './messages';
+import { handlePepe } from './messages';
 
 
 function messageRouter ({ tags, message }) {
-  const includesPepe = message.includes('FeelsOkayMan');
-
-  if (includesPepe) return handlePepe(tags);
-
+  /**
+   * FIXME: Look closer at this, as this may have to be refactored
+   */
   switch (message) {
-    case '!hello':
-      return handleHello({ tags, message });
-    case '!bye':
-      return handleBye({ tags, message });
+    case message.includes('FeelsOkayMan'):
+      return handlePepe({ tags, message });
 
     default:
       break;

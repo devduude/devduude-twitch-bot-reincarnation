@@ -1,12 +1,18 @@
 import messageRouter from './messageRouter.js';
+import commandRouter from './commandRouter.js';
 
 
-function handleMessage ({ TMI, params }) {
+function handleMessageEvent ({ TMI, params }) {
   const [ channel, tags, message, self ] = params;
 
   if (self) return;
 
-  const response = messageRouter({ tags, message });
+  const isCommand = message.split('')[0] == '!';
+
+  let response;
+
+  if (isCommand) response = commandRouter({ tags, message });
+  else response = messageRouter({ tags, message });
 
   if (!response) return;
 
@@ -14,4 +20,4 @@ function handleMessage ({ TMI, params }) {
 }
 
 
-export default handleMessage;
+export default handleMessageEvent;

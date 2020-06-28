@@ -1,8 +1,8 @@
-import handleMessage from './message';
+import handleMessageEvent from './message';
 
 
 function initializeEvents (TMI) {
-  TMI.on('message', (...params) => handleMessage({ TMI, params }));
+  TMI.on('message', (...params) => handleMessageEvent({ TMI, params }));
 }
 
 
