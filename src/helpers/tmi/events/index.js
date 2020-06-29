@@ -2,7 +2,7 @@ import handleMessageEvent from './message';
 
 
 function initializeEvents (TMI) {
-  TMI.on('message', (...params) => handleMessageEvent({ TMI, params }));
+  TMI.on('chat', (...params) => handleMessageEvent({ TMI, params }));
 }
 
 
