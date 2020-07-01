@@ -9,7 +9,7 @@ async function app (params) {
   } catch (error) {
     console.log(error);
 
-    TMI.client.disconnect();
+    await TMI.client.disconnect();
   }
 }
 

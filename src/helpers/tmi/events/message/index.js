@@ -1,8 +1,9 @@
 import messageRouter from './messageRouter.js';
 import commandRouter from './commandRouter.js';
+import Timeouter from '../../../Timeouter.js';
 
 
-function handleMessageEvent ({ TMI, params }) {
+async function handleMessageEvent ({ TMI, params }) {
   const [ channel, tags, message, self ] = params;
 
   if (self) return;
@@ -16,7 +17,19 @@ function handleMessageEvent ({ TMI, params }) {
 
   if (!response) return;
 
-  TMI.say(channel, response);
+  const userIsBlocked = Timeouter.getBlockedUsers().includes(tags.username);
+
+  if (!userIsBlocked) {
+    Timeouter.timeoutUser({
+      username: tags.username,
+      // tmi: {
+      //   cb: async (a, b) => TMI.say(a, b),
+      //   channel,
+      // },
+    });
+
+    await TMI.say(channel, response);
+  }
 }
 
 

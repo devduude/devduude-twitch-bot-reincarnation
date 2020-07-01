@@ -1,8 +1,8 @@
 import handleMessageEvent from './message';
 
 
-function initializeEvents (TMI) {
-  TMI.on('chat', (...params) => handleMessageEvent({ TMI, params }));
+async function initializeEvents (TMI) {
+  await TMI.on('chat', (...params) => handleMessageEvent({ TMI, params }));
 }
 
 
