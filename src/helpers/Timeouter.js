@@ -39,5 +39,7 @@ class Timeouter {
   }
 }
 
+const TimeouterSingleton = new Timeouter();
 
-export default new Timeouter();
+
+export default TimeouterSingleton;
