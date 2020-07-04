@@ -26,6 +26,7 @@ class Timeouter {
 
   timeoutUser ({ username, timeout = 60 * 1000, reason = 'no reason was specified', tmi = {} } = {}) {
     if (!username) return;
+    if (username.toLowerCase() == 'bashduude') return;
 
     const res = `User ${username} was timed out for ${timeout / 1000} seconds, reason: ${reason}`;
 
